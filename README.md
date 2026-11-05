@@ -88,7 +88,6 @@ F H <BR>
 <hr>
 ['0', '1', '2', '3', '4']
 
-<hr>
 ## PROGRAM:
 ```python
 from collections import defaultdict
