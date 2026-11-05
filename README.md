@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: </h3>
-<h3>Register Number:     </h3>
+<h3>Name: Jayavarsha T</h3>
+<h3>Register Number: 212223040075    </h3>
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -89,6 +89,40 @@ F H <BR>
 ['0', '1', '2', '3', '4']
 
 <hr>
+## PROGRAM:
+```python
+from collections import defaultdict
+
+def dfs(graph, start, visited, path):
+    path.append(start)
+    visited[start] = True
+    for neighbour in graph[start]:
+        # recursively visit unvisited neighbours
+        if not visited[neighbour]:
+            dfs(graph, neighbour, visited, path)
+    return path
+
+# create graph
+graph = defaultdict(list)
+n, e = map(int, input("Enter number of vertices and edges: ").split())
+
+for i in range(e):
+    u, v = input("Enter edge (u v): ").split()
+    graph[u].append(v)
+    graph[v].append(u)  # if the graph is undirected
+
+start = 'A'
+visited = defaultdict(bool)
+path = []
+
+traversedpath = dfs(graph, start, visited, path)
+print("DFS Traversal Path:", traversedpath)
+```
+
+
+## OUTPUT:
+<img width="542" height="180" alt="image" src="https://github.com/user-attachments/assets/54b0d1a7-52a9-43f7-9b3a-63bcaf82cf1f" />
+
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
